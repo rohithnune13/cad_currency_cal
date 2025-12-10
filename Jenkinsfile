@@ -10,11 +10,8 @@ pipeline {
 
         stage('Setup Python') {
             steps {
-                // Create virtual environment
                 bat 'C:\\Users\\rohit\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -m venv venv'
-                // Activate venv and upgrade pip
                 bat 'venv\\Scripts\\activate && python -m pip install --upgrade pip'
-                // Install requirements
                 bat 'venv\\Scripts\\activate && pip install -r requirements.txt'
             }
         }
